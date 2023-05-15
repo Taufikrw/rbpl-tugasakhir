@@ -13,8 +13,11 @@
 <body>
     <div class="flex">
         @include('partials.sidebar')
-        <div class="grow bg-red-500 flex justify-center items-center">
-            @yield('content')
+        <div class="flex flex-col grow">
+            @include('partials.header')
+            <div class="grow flex justify-center items-center">
+                @yield('content')
+            </div>
         </div>
     </div>
 
