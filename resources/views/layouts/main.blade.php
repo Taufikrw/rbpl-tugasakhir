@@ -15,7 +15,7 @@
         @include('partials.sidebar')
         <div class="flex flex-col grow">
             @include('partials.header')
-            <div class="grow flex justify-center items-center">
+            <div class="h-full bg-green-500 flex justify-center items-center">
                 @yield('content')
             </div>
         </div>
