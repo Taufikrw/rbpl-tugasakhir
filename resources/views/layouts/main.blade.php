@@ -12,13 +12,7 @@
 
 <body>
     <div class="flex">
-        @include('partials.sidebar')
-        <div class="flex flex-col grow">
-            @include('partials.header')
-            <div class="h-full bg-green-500 flex justify-center items-center">
-                @yield('content')
-            </div>
-        </div>
+        @yield('content')
     </div>
 
     <script type="text/javascript" src="/assets/js/scripts.js"></script>
