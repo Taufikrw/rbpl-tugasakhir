@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
 
-    <title>Dashboard</title>
+    <title>GradeMaster | {{ $title }}</title>
 </head>
 
 <body>

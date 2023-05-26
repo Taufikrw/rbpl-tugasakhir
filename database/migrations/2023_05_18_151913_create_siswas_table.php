@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('tempatLahir');
             $table->date('tanggalLahir');
             $table->string('foto');
+            $table->string('toke')->unique();
             $table->timestamps();
         });
     }

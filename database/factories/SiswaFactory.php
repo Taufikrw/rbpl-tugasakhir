@@ -24,6 +24,7 @@ class SiswaFactory extends Factory
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
             'tempatLahir' => fake()->city(),
             'tanggalLahir' => fake()->date('Y_m_d'),
+            'toke' => fake()->unique()->randomNumber(4, true),
         ];
     }
 }

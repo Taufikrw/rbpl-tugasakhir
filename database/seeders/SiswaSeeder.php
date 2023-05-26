@@ -20,6 +20,6 @@ class SiswaSeeder extends Seeder
         //     'nisn' => '124210031',
         // ]);
 
-        \App\Models\Siswa::factory(10)->create();
+        \App\Models\Siswa::factory(20)->create();
     }
 }
