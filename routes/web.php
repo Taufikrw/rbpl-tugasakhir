@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\GuruController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +18,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AdminController::class, 'index']);
 Route::get('/admin/siswa', [SiswaController::class, 'index']);
 Route::get('/admin/siswa/add', [SiswaController::class, 'tambah']);
-Route::get('/admin/guru', [GuruController::class, 'index']);
