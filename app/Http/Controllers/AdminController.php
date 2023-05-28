@@ -10,6 +10,7 @@ class AdminController extends Controller
     {
         return view('admin.dashboard', [
             "title" => 'Admin',
+            "role" => "admin",
             "grant" => [
                 [
                     'Name' => 'Siswa',

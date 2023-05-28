@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Siswa;
+use illuminate\Http\Request;
 use App\Http\Requests\StoreSiswaRequest;
 use App\Http\Requests\UpdateSiswaRequest;
 
@@ -15,6 +16,7 @@ class SiswaController extends Controller
     {
         return view('admin.siswa.table', [
             "title" => "Siswa",
+            "role" => "admin",
             "siswa" => Siswa::all(),
             "grant" => [
                 [
@@ -50,10 +52,11 @@ class SiswaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function tambah()
+    public function create()
     {
         return view('admin.siswa.add', [
-            "title" => 'Tambah',
+            "title" => 'Siswa',
+            "role" => "admin",
             "grant" => [
                 [
                     'Name' => 'Siswa',
@@ -88,9 +91,12 @@ class SiswaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSiswaRequest $request)
+    public function store(Request $request)
     {
-        //
+        // $input = $request->all();
+        // Siswa::create($input);
+        // return redirect('/admin/siswa')->with('flash_massage', 'Siswa berhasil ditambahkan');
+        dd($request);
     }
 
     /**

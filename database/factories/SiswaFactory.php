@@ -19,12 +19,12 @@ class SiswaFactory extends Factory
         return [
             'firstName' => fake()->firstName(),
             'lastName' => fake()->lastName(),
-            'foto' => fake()->imageUrl('human', true),
+            // 'foto' => fake()->imageUrl('human', true),
             'nisn' => fake()->unique()->nik(),
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
             'tempatLahir' => fake()->city(),
             'tanggalLahir' => fake()->date('Y_m_d'),
-            'toke' => fake()->unique()->randomNumber(4, true),
+            'token' => fake()->unique()->randomNumber(4, true),
         ];
     }
 }

@@ -5,3 +5,7 @@
 .sidebar-link {
     @apply relative flex items-center h-12 w-12 md:w-56 mt-2 mb-2 mx-auto shadow-lg bg-white text-slate-800 rounded-xl hover:bg-indigo-600 hover:text-white hover:rounded-md duration-300 ease-linear;
 }
+
+.active {
+    @apply bg-indigo-600 text-white
+}

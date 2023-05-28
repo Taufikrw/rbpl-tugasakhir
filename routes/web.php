@@ -16,5 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [AdminController::class, 'index']);
-Route::get('/admin/siswa', [SiswaController::class, 'index']);
-Route::get('/admin/siswa/add', [SiswaController::class, 'tambah']);
+Route::resource('/admin/siswa', SiswaController::class);

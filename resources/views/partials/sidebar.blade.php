@@ -5,7 +5,7 @@
         <img class="h-8 w-auto mt-4 mb-6" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             alt="logo">
         @foreach ($grant as $sidebarContent)
-            <a href="/admin/{{ $sidebarContent['slug'] }}" class="sidebar-link">
+            <a href="/{{ $role }}/{{ $sidebarContent['slug'] }}" class="sidebar-link {{ Request::is($role . '/' . $sidebarContent['slug'] . '*') ? 'active' : '' }}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                     class="w-6 h-6 ml-3">{!! $sidebarContent['Icon'] !!}</svg>
                 <span class="hidden md:block ml-2 uppercase font-bold">{{ $sidebarContent['Name'] }}</span>

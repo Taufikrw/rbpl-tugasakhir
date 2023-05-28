@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('gender');
             $table->string('tempatLahir');
             $table->date('tanggalLahir');
-            $table->string('foto');
-            $table->string('toke')->unique();
+            // $table->string('foto');
+            $table->string('token')->unique();
             $table->timestamps();
         });
     }
