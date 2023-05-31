@@ -4,7 +4,7 @@
     <div class="container px-20 py-11 h-full">
         <div class="flex mb-5 justify-between relative">
             <a href="/admin/siswa/create" class="py-2 px-2 rounded-xl shadow-md bg-slate-500 text-white flex">
-                <x-heroicon-o-plus-circle class="w-6"/>
+                <x-heroicon-o-plus-circle class="w-6" />
                 <span class="self-center mx-2 uppercase">Tambah {{ $title }}</span>
             </a>
             <h1 class="absolute right-1/2 translate-x-1/2 text-4xl font-bold top-0">Daftar {{ $title }}</h1>
@@ -16,4 +16,9 @@
             </table>
         </div>
     </div>
+    <script>
+        @if (session('success'))
+            alert("{{ session('success') }}");
+        @endif
+    </script>
 @endsection

@@ -1,12 +1,15 @@
-<div class="w-full h-14 bg-slate-200 shadow-lg flex justify-between items-center px-5 md:justify-end">
+<div class="w-full h-14 bg-slate-200 shadow-lg flex justify-between items-center">
     {{-- Hamburger --}}
-    <button id="hamburger" type="button" class="md:hidden">
+    <button id="hamburger" type="button" class="md:hidden ml-5">
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
     </button>
+    <a href="/{{ $role }}/{{ Str::lower($title) }}" id="back" class="hidden md:flex bg-red-200 text-slate-800 uppercase h-full px-5 items-center">
+        <span>Kembali</span>
+    </a>
     <div id="profile">
-        <a href="#" class="flex items-center md">
+        <a href="#" class="flex items-center mr-5">
             <span class="font-semibold mr-1">NamaUser</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-8 h-8">

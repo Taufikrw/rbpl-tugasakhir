@@ -8,6 +8,7 @@
             <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Jenis Kelamin</th>
             <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Tempat Lahir</th>
             <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Tanggal Lahir</th>
+            <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,9 @@
                 <td class="py-2 px-4 border-b">{{ $person->gender }}</td>
                 <td class="py-2 px-4 border-b">{{ $person->tempatLahir }}</td>
                 <td class="py-2 px-4 border-b">{{ $person->tanggalLahir }}</td>
+                <td class="py-2 px-4 border-b"><a href="/admin/siswa/{{ $person->id }}">
+                        <x-heroicon-o-arrow-top-right-on-square class="w-6 mx-auto" />
+                    </a></td>
             </tr>
         @endforeach
     </tbody>
