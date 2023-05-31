@@ -7,5 +7,9 @@
 }
 
 .active {
-    @apply bg-indigo-600 text-white
+    @apply bg-indigo-600 text-white;
+}
+
+.is_validate {
+    @apply border-pink-700 placeholder:text-pink-700 focus:ring-0 focus:outline-pink-700;
 }
