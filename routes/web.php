@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdminController::class, 'index']);
 Route::resource('/admin/siswa', SiswaController::class);
+Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/guru/pengolahanNilai', [GuruController::class, 'valueProcessing']);
+Route::get('/guru/pengolahanNilai/inputNilai', [GuruController::class, 'inputValue']);
