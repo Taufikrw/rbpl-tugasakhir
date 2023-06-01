@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\GuruController;
-use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AdminController::class, 'index']);
+Route::get('/admin', [RouteController::class, 'admin']);
 Route::resource('/admin/siswa', SiswaController::class);
-Route::get('/guru', [GuruController::class, 'index']);
-Route::get('/guru/pengolahanNilai', [GuruController::class, 'valueProcessing']);
-Route::get('/guru/pengolahanNilai/inputNilai', [GuruController::class, 'inputValue']);
+Route::resource('/admin/guru', GuruController::class);
+Route::get('/guru', [RouteController::class, 'guru']);
+Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing']);
+Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'inputValue']);
