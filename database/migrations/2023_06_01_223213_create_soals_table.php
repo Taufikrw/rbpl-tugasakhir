@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kelas', function (Blueprint $table) {
+        Schema::create('soals', function (Blueprint $table) {
             $table->id();
-            $table->char('className');
-            $table->integer('classLevel');
-            $table->year('classYear');
+            $table->integer('idClass');
+            $table->integer('idMapel');
+            $table->timestamp('processingTime')->nullable();
+            $table->timestamp('duration')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kelas');
+        Schema::dropIfExists('soals');
     }
 };
