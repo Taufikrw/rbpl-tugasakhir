@@ -111,7 +111,7 @@ class SiswaController extends Controller
      */
     public function show(Siswa $siswa)
     {
-        return view('admin.show', [
+        return view('admin.siswa.show', [
             "title" => 'Siswa',
             "role" => "admin",
             "siswa" => $siswa,
@@ -151,7 +151,7 @@ class SiswaController extends Controller
      */
     public function edit(Siswa $siswa)
     {
-        return view('admin.edit', [
+        return view('admin.siswa.update', [
             "title" => 'Siswa',
             "role" => "admin",
             "siswa" => $siswa,
