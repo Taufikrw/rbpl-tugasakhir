@@ -17,6 +17,7 @@ class SiswaFactory extends Factory
     public function definition(): array
     {
         return [
+            'idClass' => '1',
             'firstName' => fake()->firstName(),
             'lastName' => fake()->lastName(),
             // 'foto' => fake()->imageUrl('human', true),

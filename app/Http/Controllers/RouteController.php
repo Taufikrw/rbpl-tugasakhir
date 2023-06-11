@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Guru;
+use App\Models\Mapel;
 
 class RouteController extends Controller
 {
@@ -100,10 +102,11 @@ class RouteController extends Controller
         ]));
     }
 
-    public function inputValue()
+    public function daftarMapel()
     {
-        return(view("guru.inputValue", [
+        return(view("guru.daftarMapel", [
             'title'=>"Guru",
+            'daftarMapel' => Mapel::all()->where('idGuru', 1),
             'role'=>'guru',
             "grant" => [
                 [
