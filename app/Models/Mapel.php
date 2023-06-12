@@ -11,14 +11,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Mapel extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     public function gurus(): BelongsTo
     {
-        return $this->belongsTo(Guru::class);
+        return $this->belongsTo(Guru::class, 'idGuru');
     }
 
     public function kelas(): BelongsTo
     {
-        return $this->belongsTo(Kelas::class);
+        return $this->belongsTo(Kelas::class, 'idClass');
     }
 }

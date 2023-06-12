@@ -1,3 +1,5 @@
+const { name } = require("commander")
+
 // Sidebar
 const hamburger = document.getElementById('hamburger')
 const sidebar = document.getElementById('sidebar')
@@ -15,4 +17,10 @@ closeSidebar.addEventListener('click', () => {
 function generateNumber() {
     let randomNumber = Math.floor(1000 + Math.random() * 9000)
     document.getElementById('token').value = randomNumber
+}
+
+// Set Mapel Name
+function setName(btn) {
+    let nameValue = btn.id
+    document.getElementById('matkulName').value = nameValue
 }

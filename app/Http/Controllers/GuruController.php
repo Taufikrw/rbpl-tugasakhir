@@ -11,6 +11,7 @@ class GuruController extends Controller
     {
         return view('admin.guru.table', [
             "title" => "Guru",
+            "slug" => "guru",
             "role" => "admin",
             "guru" => Guru::all()->sortBy('firstName'),
             "grant" => [
@@ -48,6 +49,7 @@ class GuruController extends Controller
     {
         return view('admin.guru.create', [
             "title" => "Guru",
+            "slug" => "guru",
             "role" => "admin",
             "grant" => [
                 [
@@ -79,7 +81,7 @@ class GuruController extends Controller
             ],
         ]);
     }
-
+    
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -94,11 +96,12 @@ class GuruController extends Controller
         Guru::create($validate);
         return redirect('/admin/guru')->with('success', 'Guru berhasil ditambahkan');
     }
-
+    
     public function show(Guru $guru)
     {
         return view('admin.guru.show', [
             "title" => "Guru",
+            "slug" => "guru",
             "role" => "admin",
             "guru" => $guru,
             "grant" => [
@@ -131,15 +134,16 @@ class GuruController extends Controller
             ],
         ]);
     }
-
+    
     public function destroy(Guru $guru) {
         Guru::destroy($guru->id);
         return redirect('/admin/guru')->with('success', 'Data berhasil dihapus');
     }
-
+    
     public function edit(Guru $guru) {
         return view('admin.guru.update', [
             "title" => "Guru",
+            "slug" => "guru",
             "role" => "admin",
             "guru" => $guru,
             "grant" => [

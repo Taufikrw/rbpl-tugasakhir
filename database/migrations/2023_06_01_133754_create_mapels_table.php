@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('idClass');
             $table->integer('idGuru');
             $table->string('matkulName');
+            $table->year('tahunAjaran');
             $table->timestamps();
         });
     }

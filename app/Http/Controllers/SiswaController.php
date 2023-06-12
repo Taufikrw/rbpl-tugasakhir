@@ -16,6 +16,7 @@ class SiswaController extends Controller
     {
         return view('admin.siswa.table', [
             "title" => "Siswa",
+            "slug" => "siswa",
             "role" => "admin",
             "siswa" => Siswa::all()->sortBy('firstName'),
             "grant" => [
@@ -56,6 +57,7 @@ class SiswaController extends Controller
     {
         return view('admin.siswa.create', [
             "title" => 'Siswa',
+            "slug" => "siswa",
             "role" => "admin",
             "grant" => [
                 [
@@ -87,7 +89,7 @@ class SiswaController extends Controller
             ],
         ]);
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
@@ -105,7 +107,7 @@ class SiswaController extends Controller
         Siswa::create($validate);
         return redirect('/admin/siswa')->with('success', 'Siswa berhasil ditambahkan');
     }
-
+    
     /**
      * Display the specified resource.
      */
@@ -113,6 +115,7 @@ class SiswaController extends Controller
     {
         return view('admin.siswa.show', [
             "title" => 'Siswa',
+            "slug" => "siswa",
             "role" => "admin",
             "siswa" => $siswa,
             "grant" => [
@@ -153,6 +156,7 @@ class SiswaController extends Controller
     {
         return view('admin.siswa.update', [
             "title" => 'Siswa',
+            "slug" => "siswa",
             "role" => "admin",
             "siswa" => $siswa,
             "grant" => [
