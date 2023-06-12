@@ -33,7 +33,7 @@
             </select>
         </div>
         <div class="mb-4">
-            <label class="block text-gray-700 text-md font-semibold mb-2" for="teacherName">Kelas</label>
+            <label class="block text-gray-700 text-md font-semibold mb-2" for="teacherName">Penanggung Jawab</label>
             <select name="idGuru" id="teacherName" class="w-full border py-2 px-4 flex items-center rounded">
                 @foreach ($guru as $option)
                 <option value="{{ $option->id }}">{{ $option->firstName }} {{ $option->lastName }}</option>

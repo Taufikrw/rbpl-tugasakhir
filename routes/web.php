@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\RouteController;
@@ -22,6 +23,7 @@ Route::get('/admin', [RouteController::class, 'admin']);
 Route::resource('/admin/siswa', SiswaController::class);
 Route::resource('/admin/guru', GuruController::class);
 Route::resource('/admin/mata-pelajaran', MapelController::class);
+Route::resource('/admin/kelas', KelasController::class);
 Route::get('/guru', [RouteController::class, 'guru']);
 Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing']);
 Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel']);

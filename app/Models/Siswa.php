@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Kelas;
 use App\Models\Nilai;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Siswa extends Model
@@ -14,9 +15,9 @@ class Siswa extends Model
 
     protected $guarded = ['id'];
 
-    public function kelas(): HasMany
+    public function kelas(): BelongsTo
     {
-        return $this->hasMany(Kelas::class);
+        return $this->BelongsTo(Kelas::class);
     }
 
     public function nilais(): HasMany

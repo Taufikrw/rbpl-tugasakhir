@@ -62,7 +62,7 @@ class MapelController extends Controller
             "title" => "Mata Pelajaran",
             "slug" => "mata-pelajaran",
             "role" => "admin",
-            "mapel" => Mapel::all()->sortBy('idClass')->unique('matkulName'),
+            "mapel" => Mapel::all()->sortBy('matkulName')->unique('matkulName'),
             "guru" => Guru::all()->sortBy('firstName'),
             "kelas" => Kelas::all(),
             "grant" => [
@@ -120,6 +120,7 @@ class MapelController extends Controller
             "title" => "Mata Pelajaran",
             "slug" => "mata-pelajaran",
             "role" => "admin",
+            "list" => Mapel::all()->sortBy('matkulName')->unique('matkulName'),
             "mapel" => Mapel::find($id),
             "grant" => [
                 [
@@ -171,8 +172,9 @@ class MapelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mapel $mapel)
+    public function destroy(String $id)
     {
-        //
+        Mapel::destroy($id);
+        return redirect('/admin/mata-pelajaran')->with('success', 'Data berhasil dihapus');
     }
 }
