@@ -1,5 +1,3 @@
-const { name } = require("commander")
-
 // Sidebar
 const hamburger = document.getElementById('hamburger')
 const sidebar = document.getElementById('sidebar')

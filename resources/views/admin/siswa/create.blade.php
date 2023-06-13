@@ -91,10 +91,19 @@
                         <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-4 col-span-2">
+                <div class="mb-">
+                    <label class="block text-gray-700 text-md font-semibold mb-2" for="className">Kelas</label>
+                    <select name="idClass" id="className" class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-full">
+                        @foreach ($kelas as $option)
+                            <option value="{{ $option->id }}" {{ old('idClass') == $option->id ? 'selected' : '' }}>
+                                {{ $option->classLevel }} {{ $option->className }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-4 ml-3">
                     <label class="block text-gray-700 text-md font-semibold mb-2" for="token">Token</label>
                     <input
-                        class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-11/12 @error('token')
+                        class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-10/12 @error('token')
                         is_validate
                     @enderror"
                         type="text" id="token" name="token" placeholder="Masukkan token"

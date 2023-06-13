@@ -17,7 +17,7 @@ class Siswa extends Model
 
     public function kelas(): BelongsTo
     {
-        return $this->BelongsTo(Kelas::class);
+        return $this->BelongsTo(Kelas::class, 'idClass');
     }
 
     public function nilais(): HasMany

@@ -7,6 +7,7 @@
         <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Nama Kelas</th>
         <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Tahun Ajaran</th>
         <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Jumlah Siswa</th>
+        <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Jumlah Mapel</th>
         <th class="py-2 px-4 border font-semibold uppercase sticky top-0 bg-slate-500 text-white">Action</th>
     </tr>
 </thead>
@@ -17,6 +18,7 @@
             <td class="py-2 px-4 border-b">{{ $content->className }}</td>
             <td class="py-2 px-4 border-b">{{ $content->classYear }}</td>
             <td class="py-2 px-4 border-b">{{ $content->siswas->count() }}</td>
+            <td class="py-2 px-4 border-b">{{ $content->mapels->where('idClass', $content->id)->count() }}</td>
             <td class="py-2 px-4 border-b"><a href="{{ route('kelas.show', $content->id) }}">
                     <x-heroicon-o-arrow-top-right-on-square class="w-6 mx-auto" />
                 </a></td>

@@ -11,10 +11,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Kelas extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     public function mapels(): HasMany
     {
-        return $this->hasMany(Mapel::class);
+        return $this->hasMany(Mapel::class, 'idClass');
     }
 
     public function siswas(): HasMany
