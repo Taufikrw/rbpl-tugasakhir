@@ -23,5 +23,9 @@
 
     <script type="text/javascript" src="/assets/js/scripts.js"></script>
 </body>
-
+<script>
+    @if (session('message'))
+    alert("{{ session('massage') }}"); 
+    @endif
+</script>
 </html>

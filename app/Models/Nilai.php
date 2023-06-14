@@ -11,6 +11,15 @@ class Nilai extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'taskName',
+        'idSiswa',
+        'idMapel',
+        'idKelas',
+        'value',
+    ];
+       
+
     public function siswas(): BelongsTo
     {
         return $this->belongsTo(Siswa::class);
