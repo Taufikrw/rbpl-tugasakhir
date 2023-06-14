@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSiswaRequest;
 use App\Http\Requests\UpdateSiswaRequest;
 
@@ -59,6 +61,7 @@ class SiswaController extends Controller
             "title" => 'Siswa',
             "slug" => "siswa",
             "role" => "admin",
+            "kelas" => Kelas::all(),
             "grant" => [
                 [
                     'Name' => 'Siswa',
@@ -102,6 +105,7 @@ class SiswaController extends Controller
             'gender' => 'required',
             'tempatLahir' => 'required|max:255',
             'tanggalLahir' => 'required',
+            'idClass' => 'required',
             'token' => 'required|integer|min:4|unique:siswas,token'
         ]);
         Siswa::create($validate);
@@ -159,6 +163,7 @@ class SiswaController extends Controller
             "slug" => "siswa",
             "role" => "admin",
             "siswa" => $siswa,
+            "kelas" => Kelas::all(),
             "grant" => [
                 [
                     'Name' => 'Siswa',
@@ -201,6 +206,7 @@ class SiswaController extends Controller
             'gender' => 'required',
             'tempatLahir' => 'required|max:255',
             'tanggalLahir' => 'required',
+            'idClass' => 'required'
         ];
 
         if($request->nisn != $siswa->nisn) {

@@ -35,6 +35,10 @@
                     <span class="font-semibold text-lg">Token</span>
                     <span class="col-span-2 text-lg">: {{ $siswa->token }}</span>
                 </div>
+                <div class="grid grid-cols-3 py-2">
+                    <span class="font-semibold text-lg">Kelas</span>
+                    <span class="col-span-2 text-lg">: {{ $siswa->kelas->classLevel }} {{ $siswa->kelas->className }}</span>
+                </div>
             </div>
             <div class="flex flex-row-reverse gap-3">
                 <a href="/admin/siswa/{{ $siswa->id }}/edit"

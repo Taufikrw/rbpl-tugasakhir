@@ -28,7 +28,7 @@
             <label class="block text-gray-700 text-md font-semibold mb-2" for="className">Kelas</label>
             <select name="idClass" id="className" class="w-full border py-2 px-4 flex items-center rounded">
                 @foreach ($kelas as $option)
-                <option value="{{ $option->id }}">{{ $option->classLevel }} {{ $option->className }}</option>
+                <option value="{{ $option->id }}" {{ old('idClass') == $option->id ? 'selected' : '' }}>{{ $option->classLevel }} {{ $option->className }}</option>
                 @endforeach
             </select>
         </div>
@@ -36,7 +36,7 @@
             <label class="block text-gray-700 text-md font-semibold mb-2" for="teacherName">Penanggung Jawab</label>
             <select name="idGuru" id="teacherName" class="w-full border py-2 px-4 flex items-center rounded">
                 @foreach ($guru as $option)
-                <option value="{{ $option->id }}">{{ $option->firstName }} {{ $option->lastName }}</option>
+                <option value="{{ $option->id }}" {{ old('idGuru') == $option->id ? 'selected' : '' }}>{{ $option->firstName }} {{ $option->lastName }}</option>
                 @endforeach
             </select>
         </div>
