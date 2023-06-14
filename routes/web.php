@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\SoalController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\NilaiController;
@@ -24,8 +25,12 @@ Route::resource('/admin/siswa', SiswaController::class);
 Route::resource('/admin/guru', GuruController::class);
 Route::resource('/admin/mata-pelajaran', MapelController::class);
 Route::resource('/admin/kelas', KelasController::class);
+
 Route::get('/guru', [RouteController::class, 'guru']);
 Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing']);
+Route::get('/guru/membuatKuis', [RouteController::class, 'membuatKuis']);
+Route::resource('/guru/membuatKuis/{idMapel}', SoalController::class);
 Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel']);
-Route::resource('/guru/pengolahanNilai/inputNilai/{mapelName}', NilaiController::class);
+Route::resource('/guru/pengolahanNilai/inputNilai/{idMapel}', NilaiController::class);
 Route::post('/nilai', [NilaiController::class, 'store'])->name('nilai.store');
+Route::post('/soal', [SoalController::class, 'store'])->name('soal.store');

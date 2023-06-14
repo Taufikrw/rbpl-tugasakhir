@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 5c268cf5296d26b3c1bfba6dd671a554c501b208
 // Sidebar
 const hamburger = document.getElementById('hamburger')
 const sidebar = document.getElementById('sidebar')

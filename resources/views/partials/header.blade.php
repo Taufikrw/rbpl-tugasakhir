@@ -5,11 +5,7 @@
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
     </button>
-<<<<<<< HEAD
     <a href="/{{ $role }}" id="back" class="hidden md:flex bg-red-200 text-slate-800 uppercase h-full px-5 items-center">
-=======
-    <a href="/{{ $role }}/" id="back" class="hidden md:flex bg-red-200 text-slate-800 uppercase h-full px-5 items-center">
->>>>>>> 5c268cf5296d26b3c1bfba6dd671a554c501b208
         <span>Kembali</span>
     </a>
     <div id="profile">

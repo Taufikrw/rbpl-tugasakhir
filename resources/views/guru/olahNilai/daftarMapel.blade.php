@@ -16,7 +16,7 @@
               <tr class="hover:bg-indigo-500 hover:text-white duration-200 ease-in">
                   <td class="py-2 px-4 border-b">{{ $mapel->matkulName }}</td>
                   <td class="py-2 px-4 border-b">
-                    <a href="/guru/pengolahanNilai/inputNilai/{{ $mapel->matkulName }}/create">
+                    <a href="/guru/pengolahanNilai/inputNilai/{{ $mapel->id }}/create">
                     <x-heroicon-o-arrow-top-right-on-square class="w-6 mx-auto" />
                     </a>
                   </td>
