@@ -56,7 +56,7 @@
                 @enderror
             </div>
             <input type="submit" value="Kirim"
-                class="bg-green-500 py-2 px-4 rounded-md text-white uppercase mt-5 right-0 absolute">
+                class="py-2 px-4 submit-btn mt-5 right-0 absolute">
         </form>
     </div>
 @endsection

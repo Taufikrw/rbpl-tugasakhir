@@ -13,3 +13,19 @@
 .is_validate {
     @apply border-pink-700 placeholder:text-pink-700 focus:ring-0 focus:outline-pink-700;
 }
+
+.red-button {
+    @apply bg-red-400 font-semibold uppercase hover:bg-red-500 duration-200;
+}
+
+.submit-btn {
+    @apply bg-green-500 font-semibold rounded-md text-white outline uppercase hover:text-green-500 hover:outline-green-500 hover:bg-white;
+}
+
+.edit-btn {
+    @apply font-semibold bg-indigo-500 rounded-md text-white outline uppercase hover:text-indigo-500 hover:outline-indigo-500 hover:bg-white;
+}
+
+.remove-btn {
+    @apply font-semibold bg-red-500 rounded-md  text-white outline uppercase hover:text-red-500 hover:outline-red-500 hover:bg-white;
+}

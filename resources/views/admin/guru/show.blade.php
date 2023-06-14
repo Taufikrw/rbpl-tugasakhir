@@ -42,12 +42,12 @@
             </div>
             <div class="flex flex-row-reverse gap-3">
                 <a href="/admin/guru/{{ $guru->id }}/edit"
-                    class="grid justify-self-end h-fit py-2 px-5 font-semibold bg-indigo-500 rounded-lg mt-3 text-white outline uppercase hover:text-indigo-500 hover:outline-indigo-500 hover:bg-white">Edit</a>
+                    class="grid justify-self-end h-fit py-2 px-5 mt-3 edit-btn">Edit</a>
                 <form action="/admin/guru/{{ $guru->id }}" method="POST">
                     @method('delete')
                     @csrf
                     <button
-                        class="grid justify-self-end h-fit py-2 px-5 font-semibold bg-red-500 rounded-lg mt-3 text-white outline uppercase hover:text-red-500 hover:outline-red-500 hover:bg-white"
+                        class="grid justify-self-end h-fit py-2 px-5 mt-3 remove-btn"
                         onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
                 </form>
             </div>

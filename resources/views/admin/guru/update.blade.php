@@ -112,7 +112,7 @@
                 </div>
             </div>
             <input type="submit" value="Kirim"
-                class="grid justify-self-end h-fit py-2 px-5 font-semibold bg-green-500 rounded-lg mt-3 text-white outline uppercase hover:text-green-500 hover:outline-green-500 hover:bg-white">
+                class="grid justify-self-end h-fit py-2 px-5 mt-3 submit-btn">
         </div>
     </form>
 @endsection

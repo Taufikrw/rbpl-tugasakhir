@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('idSiswa');
             $table->integer('idMapel');
             $table->integer('idKelas');
-            $table->integer('value');
+            $table->integer('value')->nullable();
             $table->timestamps();
         });
     }

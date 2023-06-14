@@ -22,4 +22,9 @@ class Kelas extends Model
     {
         return $this->hasMany(Siswa::class, 'idClass');
     }
+    
+    public function nilais(): HasMany
+    {
+        return $this->hasMany(Nilai::class, 'idClass');
+    }
 }

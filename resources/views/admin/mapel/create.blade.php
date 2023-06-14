@@ -52,7 +52,7 @@
                 <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
             @enderror
         </div>
-        <input type="submit" value="Tambah" class="bg-green-500 py-2 px-4 rounded-md text-white uppercase mt-5 right-0 absolute">
+        <input type="submit" value="Tambah" class=" p-2 px-4 rounded-md mt-5 right-0 absolute submit-btn">
     </form>
 </div>
 @endsection
