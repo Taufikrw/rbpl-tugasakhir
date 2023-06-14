@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('idClass');
             $table->string('firstName');
             $table->string('lastName');
+            $table->string('username')->unique();
             $table->string('nisn')->unique();
             $table->string('gender');
             $table->string('tempatLahir');

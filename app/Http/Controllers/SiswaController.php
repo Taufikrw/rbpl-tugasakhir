@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreSiswaRequest;
 use App\Http\Requests\UpdateSiswaRequest;
 
@@ -109,6 +111,7 @@ class SiswaController extends Controller
         $validate = $request->validate([
             'firstName' => 'required|max:125',
             'lastName' => 'required|max:125',
+            'username' => 'required|max:30|unique:siswas,username',
             'nisn'=> 'required|integer|digits:16|unique:siswas,nisn',
             'gender' => 'required',
             'tempatLahir' => 'required|max:255',
@@ -117,6 +120,11 @@ class SiswaController extends Controller
             'token' => 'required|integer|min:4|unique:siswas,token'
         ]);
         Siswa::create($validate);
+        User::create([
+            'username' => $request->username,
+            'role_id' => 3,
+            'password' => Hash::make($request->token)
+        ]);
         return redirect('/admin/siswa')->with('success', 'Siswa berhasil ditambahkan');
     }
     
@@ -227,6 +235,10 @@ class SiswaController extends Controller
 
         if($request->nisn != $siswa->nisn) {
             $rules['nisn'] = 'required|integer|digits:16|unique:siswas,nisn';
+        }
+
+        if($request->username != $siswa->username) {
+            $rules['nisn'] = 'required|max:30|unique:siswas,username';
         }
 
         if($request->token != $siswa->token) {

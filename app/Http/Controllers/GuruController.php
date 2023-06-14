@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Guru;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class GuruController extends Controller
 {
@@ -95,6 +97,7 @@ class GuruController extends Controller
         $validate = $request->validate([
             'firstName' => 'required|max:125',
             'lastName' => 'required|max:125',
+            'username' => 'required|max:30|unique:gurus,username',
             'nip' => 'required|integer|digits:16|unique:gurus,nip',
             'gender' => 'required',
             'tempatLahir' => 'required|max:255',
@@ -102,6 +105,11 @@ class GuruController extends Controller
             'token' => 'required|integer|min:4|unique:gurus,token'
         ]);
         Guru::create($validate);
+        User::create([
+            'username' => $request->username,
+            'role_id' => 2,
+            'password' => Hash::make($request->token)
+        ]);
         return redirect('/admin/guru')->with('success', 'Guru berhasil ditambahkan');
     }
     
@@ -148,7 +156,9 @@ class GuruController extends Controller
     }
     
     public function destroy(Guru $guru) {
+        $user = User::where('username', $guru->username);
         Guru::destroy($guru->id);
+        User::destroy($user->id);
         return redirect('/admin/guru')->with('success', 'Data berhasil dihapus');
     }
     
@@ -204,6 +214,10 @@ class GuruController extends Controller
 
         if($request->nisn != $guru->nisn) {
             $rules['nip'] = 'required|integer|digits:16|unique:gurus,nip';
+        }
+        
+        if($request->nisn != $guru->nisn) {
+            $rules['username'] = 'required|max:30|unique:gurus,username';
         }
 
         if($request->token != $guru->token) {

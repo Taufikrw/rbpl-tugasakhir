@@ -16,9 +16,11 @@ class GuruFactory extends Factory
      */
     public function definition(): array
     {
+        $firstName = fake()->firstName();
         return [
-            'firstName' => fake()->firstName(),
+            'firstName' => $firstName,
             'lastName' => fake()->lastName(),
+            'username' => $firstName . fake()->unique()->randomNumber(3, true),
             // 'foto' => fake()->imageUrl('human', true),
             'nip' => fake()->unique()->nik(),
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
