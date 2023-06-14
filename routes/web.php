@@ -25,12 +25,12 @@ Route::post('/login', [AuthController::class, 'authenticate'])->middleware('gues
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 
-Route::get('/admin', [RouteController::class, 'admin'])->middleware('auth');
-Route::resource('/admin/siswa', SiswaController::class)->middleware('auth');
-Route::resource('/admin/guru', GuruController::class)->middleware('auth');
-Route::resource('/admin/mata-pelajaran', MapelController::class)->middleware('auth');
-Route::resource('/admin/kelas', KelasController::class)->middleware('auth');
-Route::get('/guru', [RouteController::class, 'guru']);
-Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing']);
-Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel']);
-Route::resource('/guru/pengolahanNilai/inputNilai/{mapelName}', NilaiController::class);
+Route::get('/', [RouteController::class, 'index'])->middleware('auth');
+Route::resource('/admin/siswa', SiswaController::class)->middleware(['auth', 'must-admin']);
+Route::resource('/admin/guru', GuruController::class)->middleware(['auth', 'must-admin']);
+Route::resource('/admin/mata-pelajaran', MapelController::class)->middleware(['auth', 'must-admin']);
+Route::resource('/admin/kelas', KelasController::class)->middleware(['auth', 'must-admin']);
+// Route::get('/guru', [RouteController::class, 'guru'])->middleware(['auth', 'must-guru']);
+Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing'])->middleware(['auth', 'must-guru']);
+Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel'])->middleware(['auth', 'must-guru']);
+Route::resource('/guru/pengolahanNilai/inputNilai/{mapelName}', NilaiController::class)->middleware(['auth', 'must-guru']);

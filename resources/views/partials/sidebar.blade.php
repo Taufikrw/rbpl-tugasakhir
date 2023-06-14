@@ -5,7 +5,7 @@
         <img class="h-8 w-auto mt-4 mb-6" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             alt="logo">
         @foreach ($grant as $sidebarContent)
-            <a href="/{{ $role }}/{{ $sidebarContent['slug'] }}" class="sidebar-link {{ Request::is($role . '/' . $sidebarContent['slug'] . '*') ? 'active' : '' }}">
+            <a href="/{{ Auth::user()->role->name }}/{{ $sidebarContent['slug'] }}" class="relative flex sidebar-link {{ Request::is(Auth::user()->role->name . '/' . $sidebarContent['slug'] . '*') ? 'active' : '' }} {{ (Auth::user()->role->name != $sidebarContent['role']) ? 'hidden' : '' }}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                     class="w-6 h-6 ml-3">{!! $sidebarContent['Icon'] !!}</svg>
                 <span class="hidden md:block ml-2 uppercase font-bold">{{ $sidebarContent['Name'] }}</span>
@@ -20,7 +20,7 @@
         </button>
     </div>
     {{-- Canvas --}}
-    <div class="flex flex-col border-t-2 border-slate-300 pt-4">
+    {{-- <div class="flex flex-col border-t-2 border-slate-300 pt-4">
         <a href="#" class="sidebar-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ml-3">
                 <path fill-rule="evenodd"
@@ -29,5 +29,5 @@
             </svg>
             <span class="hidden md:block ml-2 mr-3 uppercase font-bold overflow-hidden">Contohhjhhhhhhhhhhhhhhhh</span>
         </a>
-    </div>
+    </div> --}}
 </div>
