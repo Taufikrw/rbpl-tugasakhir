@@ -34,9 +34,9 @@ Route::resource('/admin/kelas', KelasController::class)->middleware(['auth', 'mu
 
 Route::get('/guru', [RouteController::class, 'guru'])->middleware(['auth', 'must-guru']);
 Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing'])->middleware(['auth', 'must-guru']);
-Route::get('/guru/membuatKuis', [RouteController::class, 'membuatKuis'])->middleware(['auth', 'must-guru']);
-Route::resource('/guru/membuatKuis/{idMapel}', SoalController::class)->middleware(['auth', 'must-guru']);
 Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel'])->middleware(['auth', 'must-guru']);
 Route::resource('/guru/pengolahanNilai/inputNilai/{idMapel}', NilaiController::class)->middleware(['auth', 'must-guru']);
+Route::get('/guru/membuatKuis', [RouteController::class, 'membuatKuis'])->middleware(['auth', 'must-guru']);
+Route::resource('/guru/membuatKuis/{idMapel}', SoalController::class)->middleware(['auth', 'must-guru']);
 Route::post('/nilai', [NilaiController::class, 'store'])->name('nilai.store')->middleware(['auth', 'must-guru']);
 Route::post('/soal', [SoalController::class, 'store'])->name('soal.store')->middleware(['auth', 'must-guru']);
