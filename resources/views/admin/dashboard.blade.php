@@ -4,7 +4,7 @@
     <div class="w-full">
         <h1 class="text-xl max-w-sm mx-auto text-center font-semibold mt-10 md:text-3xl md:max-w-md mb-5 md:mt-0">
             Selamat Datang di
-            Dashboard Admin!, <span>Nama User</span></h1>
+            Dashboard {{ Auth::user()->role->name }}!, <span>{{ Auth::user()->username }}</span></h1>
         <div class="grid grid-cols-2 max-w-3xl gap-5 mx-auto">
             @foreach ($grant as $content)
                 <a href="/admin/{{ $content['slug'] }}"
@@ -15,5 +15,6 @@
                 </a>
             @endforeach
         </div>
+        <a href="/logout" class="p-2 bg-indigo-500 rounded grid w-fit mx-auto mt-10">Logout</a>
     </div>
 @endsection
