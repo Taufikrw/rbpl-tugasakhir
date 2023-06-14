@@ -43,7 +43,7 @@
                     @enderror
                 </div>
                 <input type="submit" value="Tambah"
-                class="bg-green-500 py-2 px-4 rounded-md text-white uppercase mt-5">
+                class="py-2 px-4 submit-btn mt-5">
         </form>
             </form>
         </div>

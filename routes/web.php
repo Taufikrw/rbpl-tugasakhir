@@ -33,10 +33,10 @@ Route::resource('/admin/mata-pelajaran', MapelController::class)->middleware(['a
 Route::resource('/admin/kelas', KelasController::class)->middleware(['auth', 'must-admin']);
 
 Route::get('/guru', [RouteController::class, 'guru'])->middleware(['auth', 'must-guru']);
-Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing'])->middleware(['auth', 'must-guru']);
-Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel'])->middleware(['auth', 'must-guru']);
+Route::get('/guru/inputNilai', [RouteController::class, 'daftarMapel'])->middleware(['auth', 'must-guru']);
+Route::get('/guru/inputNilai/{id}', [RouteController::class, 'daftarMapel'])->middleware(['auth', 'must-guru']);
+Route::get('/siswa/catatan-nilai', [SiswaController::class, 'showNilai'])->middleware(['auth', 'must-siswa']);
+Route::get('/guru/lihat-nilai', [NilaiController::class, 'index'])->middleware(['auth', 'must-guru']);
+Route::get('/guru/lihat-nilai/{idMapel}', [RouteController::class, 'daftarTugas'])->middleware(['auth', 'must-guru']);
 Route::resource('/guru/pengolahanNilai/inputNilai/{idMapel}', NilaiController::class)->middleware(['auth', 'must-guru']);
-Route::get('/guru/membuatKuis', [RouteController::class, 'membuatKuis'])->middleware(['auth', 'must-guru']);
-Route::resource('/guru/membuatKuis/{idMapel}', SoalController::class)->middleware(['auth', 'must-guru']);
 Route::post('/nilai', [NilaiController::class, 'store'])->name('nilai.store')->middleware(['auth', 'must-guru']);
-Route::post('/soal', [SoalController::class, 'store'])->name('soal.store')->middleware(['auth', 'must-guru']);

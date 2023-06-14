@@ -1,21 +1,21 @@
-<div class="w-full h-14 bg-slate-200 shadow-lg flex justify-between items-center">
+<div class="w-full h-14 bg-slate-200 flex justify-between items-center">
     {{-- Hamburger --}}
     <button id="hamburger" type="button" class="md:hidden ml-5">
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
         <span class="w-[30px] h-[2px] my-2 block bg-slate-900 mb-2"></span>
     </button>
-    <a href="/" id="back" class="hidden md:flex bg-red-200 text-slate-800 uppercase h-full px-5 items-center">
+    <a href="/" id="back" class="hidden md:flex bg-red-200 hover:bg-red-300 text-slate-800 uppercase h-full px-5 items-center">
         <span>Kembali</span>
     </a>
-    <div id="profile">
-        <a href="#" class="flex items-center mr-5">
-            <span class="font-semibold mr-1">NamaUser</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+    <div id="profile" class="flex h-full text-center bg-slate-300 px-3 md:px-5 hover:bg-slate-400 duration-200">
+        <a href="#" class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
+            <span class="font-semibold ml-1 md:ml-2 text-sm md:text-md uppercase">{{ Auth::user()->username }}</span>
         </a>
     </div>
 </div>

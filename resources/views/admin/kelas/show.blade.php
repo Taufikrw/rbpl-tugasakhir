@@ -36,11 +36,11 @@
                     <form action="{{ route('kelas.destroy', $kelas->id) }}" method="POST" class="block">
                         @method('delete')
                         @csrf
-                        <button class="bg-red-500 py-2 px-4 rounded-md text-white uppercase"
+                        <button class="py-2 px-4 remove-btn"
                             onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
                     </form>
                     <a href="{{ route('kelas.edit', $kelas->id) }}"
-                        class="bg-indigo-500 py-2 px-4 rounded-md text-white uppercase ml-2">Edit</a>
+                        class="py-2 px-4 edit-btn ml-2">Edit</a>
                 </div>
             </div>
         </div>

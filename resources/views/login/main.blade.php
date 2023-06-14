@@ -10,7 +10,7 @@
     <title>GradeMaster | {{ $title }}</title>
 </head>
 
-<body>
+<body class="bg-gray-100">
     @yield('form')
 
     <script type="text/javascript" src="/assets/js/scripts.js"></script>

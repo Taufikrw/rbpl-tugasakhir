@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Guru;
 use App\Models\Kelas;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Mapel extends Model
 {
@@ -21,5 +22,10 @@ class Mapel extends Model
     public function kelas(): BelongsTo
     {
         return $this->belongsTo(Kelas::class, 'idClass');
+    }
+
+    public function nilais(): HasMany
+    {
+        return $this->hasMany(Nilai::class);
     }
 }

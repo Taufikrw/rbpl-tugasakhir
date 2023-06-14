@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kelas;
+use App\Models\Nilai;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreSiswaRequest;
 use App\Http\Requests\UpdateSiswaRequest;
@@ -102,7 +104,7 @@ class SiswaController extends Controller
             ],
         ]);
     }
-    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -112,7 +114,7 @@ class SiswaController extends Controller
             'firstName' => 'required|max:125',
             'lastName' => 'required|max:125',
             'username' => 'required|max:30|unique:siswas,username',
-            'nisn'=> 'required|integer|digits:16|unique:siswas,nisn',
+            'nisn' => 'required|integer|digits:16|unique:siswas,nisn',
             'gender' => 'required',
             'tempatLahir' => 'required|max:255',
             'tanggalLahir' => 'required',
@@ -127,7 +129,7 @@ class SiswaController extends Controller
         ]);
         return redirect('/admin/siswa')->with('success', 'Siswa berhasil ditambahkan');
     }
-    
+
     /**
      * Display the specified resource.
      */
@@ -233,21 +235,21 @@ class SiswaController extends Controller
             'idClass' => 'required'
         ];
 
-        if($request->nisn != $siswa->nisn) {
+        if ($request->nisn != $siswa->nisn) {
             $rules['nisn'] = 'required|integer|digits:16|unique:siswas,nisn';
         }
 
-        if($request->username != $siswa->username) {
+        if ($request->username != $siswa->username) {
             $rules['nisn'] = 'required|max:30|unique:siswas,username';
         }
 
-        if($request->token != $siswa->token) {
+        if ($request->token != $siswa->token) {
             $rules['token'] = 'required|integer|min:4|unique:siswas,token';
         }
 
         $validate = $request->validate($rules);
         Siswa::where('id', $siswa->id)->update($validate);
-        return redirect('/admin/siswa/'.$siswa->id)->with('success', 'Data berhasil diupdate');
+        return redirect('/admin/siswa/' . $siswa->id)->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -257,5 +259,22 @@ class SiswaController extends Controller
     {
         Siswa::destroy($siswa->id);
         return redirect('/admin/siswa')->with('success', 'Data berhasil dihapus');
+    }
+
+    public function showNilai()
+    {
+        return view('siswa.catatan', [
+            "title" => 'Nilai',
+            'siswa' => Siswa::all()->where('username', Auth::user()->username)->first(),
+            "grant" => [
+                [
+                    'Name' => 'Catatan Nilai',
+                    'slug' => 'catatan-nilai',
+                    "role" => "siswa",
+                    'Icon' => '<path fill-rule="evenodd" d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z" clip-rule="evenodd" />',
+                ],
+            ],
+        ]);
     }
 }
