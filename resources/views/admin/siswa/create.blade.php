@@ -35,7 +35,7 @@
                         <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 col-span-2">
                     <label class="block text-gray-700 text-md font-semibold mb-2" for="nisn">NISN</label>
                     <input
                         class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-full @error('nisn')
@@ -44,6 +44,18 @@
                         type="text" id="nisn" name="nisn" placeholder="Masukkan nisn"
                         value="{{ old('nisn') }}">
                     @error('nisn')
+                        <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-md font-semibold mb-2" for="username">Username</label>
+                    <input
+                        class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-full @error('username')
+                        is_validate
+                    @enderror"
+                        type="text" id="username" name="username" placeholder="Masukkan username"
+                        value="{{ old('username') }}">
+                    @error('username')
                         <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
                     @enderror
                 </div>

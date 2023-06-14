@@ -16,6 +16,10 @@
                     <span class="col-span-2 text-lg">: {{ $guru->firstName }} {{ $guru->lastName }}</span>
                 </div>
                 <div class="grid grid-cols-3 py-2">
+                    <span class="font-semibold text-lg">Username</span>
+                    <span class="col-span-2 text-lg">: {{ $guru->username }}</span>
+                </div>
+                <div class="grid grid-cols-3 py-2">
                     <span class="font-semibold text-lg">NIP</span>
                     <span class="col-span-2 text-lg">: {{ $guru->nip }}</span>
                 </div>

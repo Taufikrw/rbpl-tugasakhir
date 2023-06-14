@@ -16,10 +16,12 @@ class SiswaFactory extends Factory
      */
     public function definition(): array
     {
+        $firstName = fake()->firstName();
         return [
             'idClass' => fake()->numberBetween(1, 6),
             'firstName' => fake()->firstName(),
             'lastName' => fake()->lastName(),
+            'username' => $firstName . fake()->unique()->randomNumber(3, true),
             // 'foto' => fake()->imageUrl('human', true),
             'nisn' => fake()->unique()->nik(),
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),

@@ -35,15 +35,27 @@
                         <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 col-span-2">
                     <label class="block text-gray-700 text-md font-semibold mb-2" for="nip">NIP</label>
                     <input
-                        class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-full @error('nip')
+                    class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-full @error('nip')
+                    is_validate
+                    @enderror"
+                    type="text" id="nip" name="nip" placeholder="Masukkan nip"
+                    value="{{ old('nip') }}">
+                    @error('nip')
+                    <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-md font-semibold mb-2" for="username">Username</label>
+                    <input
+                        class="border border-gray-300 outline-indigo-500 rounded-lg px-4 py-2 w-full @error('username')
                     is_validate
                 @enderror"
-                        type="text" id="nip" name="nip" placeholder="Masukkan nip"
-                        value="{{ old('nip') }}">
-                    @error('nip')
+                        type="text" id="username" name="username" placeholder="Masukkan username"
+                        value="{{ old('username') }}">
+                    @error('username')
                         <div class="text-sm text-pink-700 ml-1">{{ $message }}</div>
                     @enderror
                 </div>
