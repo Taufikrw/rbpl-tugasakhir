@@ -93,10 +93,13 @@ class RouteController extends Controller
                 [
                     'Name' => 'Input Nilai',
                     'slug' => 'inputNilai',
+                    'icon' => '<path fillRule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clipRule="evenodd" />'
                 ],
                 [
                     'Name' => 'Koreksi Essay',
                     'slug' => 'koreksiEssay',
+                    'icon' => '<path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" />'
+                  
                 ],
             ],
         ]));
@@ -126,4 +129,5 @@ class RouteController extends Controller
             ],
         ]));
     }
+
 }

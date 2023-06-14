@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nilai;
+use App\Models\Siswa;
+use App\Models\Mapel;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreNilaiRequest;
 use App\Http\Requests\UpdateNilaiRequest;
 
@@ -19,10 +22,12 @@ class NilaiController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $mapelName)
     {
-        return(view("guru.create", [
+        return view("guru.create", [
             'title'=>"Nilai",
+            'mapel' => Mapel::all()->where('matkulName', $mapelName)->first(),
+            'siswas'=> Siswa::all()->where('idClass', 1),
             'role'=>'guru',
             "grant" => [
                 [
@@ -40,15 +45,26 @@ class NilaiController extends Controller
                     clip-rule="evenodd" />',
                 ],
             ],
-        ]));
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreNilaiRequest $request)
+    public function store(Request $request)
     {
-        //
+        for ($x=0; $x < $request->jumlahSiswa ; $x++) { 
+            $data = [
+                'taskName' => $request->taskName,
+                'idSiswa' => $request->idSiswa[$x],
+                'idMapel' => $request->idMapel,
+                'idKelas' => $request->idKelas,
+                'value' => $request->valueSiswa[$x],
+            ];
+            
+            Nilai::create($data);
+       }
+       return redirect('/guru/pengolahanNilai/inputNilai')->with('message', 'Nilai baru berhasil ditambahkan');
     }
 
     /**

@@ -28,3 +28,4 @@ Route::get('/guru', [RouteController::class, 'guru']);
 Route::get('/guru/pengolahanNilai', [RouteController::class, 'valueProcessing']);
 Route::get('/guru/pengolahanNilai/inputNilai', [RouteController::class, 'daftarMapel']);
 Route::resource('/guru/pengolahanNilai/inputNilai/{mapelName}', NilaiController::class);
+Route::post('/nilai', [NilaiController::class, 'store'])->name('nilai.store');
