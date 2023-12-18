@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Description
+
+GradeMaster adalah sebuah website sistem penilaian untuk mengolah hasil kuis atau nilai dari siswa sehingga dapat menghasilkan output berupa grafik nilai dari siswa dengan jangka waktu tertentu. Grafik nilai tersebut dapat digunakan oleh siswa dalam menentukan strategi belajar dan mencari penguasaan materi perlu diperdalam. Nantinya dalam pengembangan aplikasi ini, akan terintegrasi dengan database MySQL. Pada pengembangan aplikasi ini nantinya juga akan dibantu dengan beberapa framework untuk memudahkan pengembang dalam mengembangkan aplikasi ini seperti menggunakan  framework Tailwind dan Laravel. Dengan adanya GradeMaster ini diharapkan dapat membantu sekolah-sekolah dalam mengelola kegiatan akademis pada sekolahnya.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
