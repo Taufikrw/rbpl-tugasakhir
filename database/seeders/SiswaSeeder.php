@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SiswaSeeder extends Seeder
 {
@@ -14,12 +13,12 @@ class SiswaSeeder extends Seeder
      */
     public function run(): void
     {
-        // Siswa::create([
-        //     'nama' => 'Taufik Rahman',
-        //     'foto' => 'taufik.jpg',
-        //     'nisn' => '124210031',
-        // ]);
-
-        \App\Models\Siswa::factory(20)->create();
+        Siswa::factory(50)->create()->each(function ($siswa) {
+            User::factory()->create([
+                'role_id' => 3,
+                'username' => $siswa->username,
+                'password' => bcrypt($siswa->token),
+            ]);
+        });
     }
 }

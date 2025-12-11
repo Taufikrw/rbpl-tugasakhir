@@ -5,9 +5,8 @@
     <div class="flex flex-wrap border h-[70vh] rounded-lg shadow-md p-10">
         <div class="basis-1/3 flex flex-wrap justify-center">
             <div class="border h-96 w-64 rounded-lg shadow-lg overflow-hidden">
-                <img src="https://source.unsplash.com/random/?human" alt="foto" class="object-cover h-full w-72">
+                <img src="{{ asset('assets/photo-placeholder.jpg') }}" alt="foto" class="object-cover h-full w-72">
             </div>
-            <a href="#" class="py-2 px-5 h-fit bg-indigo-500 rounded-lg mt-3 text-white">Upload Foto</a>
         </div>
         <div class="basis-2/3 px-10 grid">
             <div class="grid h-96 max-h-96 overflow-auto scrollbar-none">

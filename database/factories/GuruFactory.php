@@ -25,7 +25,7 @@ class GuruFactory extends Factory
             'nip' => fake()->unique()->nik(),
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
             'tempatLahir' => fake()->city(),
-            'tanggalLahir' => fake()->date('Y_m_d'),
+            'tanggalLahir' => fake()->date('Y_m_d', '2000-01-01'),
             'token' => fake()->unique()->randomNumber(4, true),
         ];
     }

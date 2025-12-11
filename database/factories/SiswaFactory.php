@@ -21,12 +21,12 @@ class SiswaFactory extends Factory
             'idClass' => fake()->numberBetween(1, 6),
             'firstName' => fake()->firstName(),
             'lastName' => fake()->lastName(),
-            'username' => $firstName . fake()->unique()->randomNumber(3, true),
+            'username' => strtolower(preg_replace('/\s+/', '', $firstName)) . fake()->unique()->numerify('###'),
             // 'foto' => fake()->imageUrl('human', true),
             'nisn' => fake()->unique()->nik(),
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
             'tempatLahir' => fake()->city(),
-            'tanggalLahir' => fake()->date('Y_m_d'),
+            'tanggalLahir' => fake()->dateTimeBetween('2011-01-01', '2018-12-31')->format('Y-m-d'),
             'token' => fake()->unique()->randomNumber(4, true),
         ];
     }

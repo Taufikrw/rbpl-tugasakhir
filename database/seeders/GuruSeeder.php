@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Guru;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class GuruSeeder extends Seeder
@@ -12,6 +13,12 @@ class GuruSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Guru::factory(20)->create();
+        Guru::factory(10)->create()->each(function ($guru) {
+            User::factory()->create([
+                'role_id' => 2,
+                'username' => $guru->username,
+                'password' => bcrypt($guru->token)
+            ]);
+        });
     }
 }

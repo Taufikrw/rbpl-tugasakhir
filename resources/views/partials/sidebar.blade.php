@@ -3,8 +3,8 @@
     {{-- Sidebar-Link --}}
     <div class="flex flex-col justify-between h-screen">
         <div>
-            <img class="h-8 w-auto mt-4 mb-6 block mx-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="logo">
+            <img class="h-16 w-auto mt-4 mb-6 block mx-auto"
+                src="{{ asset('assets/logo-sidebar.png') }}" alt="logo">
             @foreach ($grant as $sidebarContent)
                 <a href="/{{ Auth::user()->role->name }}/{{ $sidebarContent['slug'] }}"
                     class="relative flex sidebar-link {{ Request::is(Auth::user()->role->name . '/' . $sidebarContent['slug'] . '*') ? 'active' : '' }} {{ Auth::user()->role->name != $sidebarContent['role'] ? 'hidden' : '' }}">
